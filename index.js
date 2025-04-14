@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import authRoutes from "./routes/auth.js";
+import teacherRoutes from "./routes/teacher.js";
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.get('/', (req, res) => {
 );
 
 app.use('/auth', authRoutes);
+app.use('/teacher', teacherRoutes);
 
 app.listen(5000, () => {
     console.log('Server is running on port 5000');
